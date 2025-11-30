@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Certifications</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h2 { color: #333; }
+    .cert-list { margin-bottom: 30px; }
+    .cert-list li { margin: 5px 0; }
+    canvas { max-width: 600px; }
+  </style>
+</head>
+<body>
+  <h2>Certifications</h2>
+  <ul class="cert-list">
+    <li><a href="https://coursera.org/verify/XXXX" target="_blank">Data Analysis with Python</a></li>
+    <li><a href="https://coursera.org/verify/YYYY" target="_blank">SQL for Data Science</a></li>
+    <li><a href="https://coursera.org/verify/ZZZZ" target="_blank">Machine Learning</a></li>
+  </ul>
+
+  <h2>Certification Categories</h2>
+  <canvas id="certChart"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('certChart').getContext('2d');
+    const certChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Data Analysis', 'SQL', 'Machine Learning'],
+        datasets: [{
+          label: 'Number of Certifications',
+          data: [5, 3, 4], // Replace with your counts
+          backgroundColor: ['#4CAF50', '#2196F3', '#FF9800']
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
